@@ -207,44 +207,52 @@
 		</div>
 		<div class="page-content container-fluid">
 			<div class="row">
-				<div class="col-md-12">
-					<div class="panel rounded-0">
-						<div class="panel-heading">
-							<h5 class="panel-title">Add <?php echo $breadcrumb; ?></h5>
-						</div>
-						<div class="panel-body container-fluid">
-							<form action="<?php echo site_url();?>website/masuk/tambah" method="post" id="exampleStandardForm" autocomplete="off">
-								<div class="form-group form-material">
-								<div class="form-group form-material">
-									<label class="control-label" for="inputText">Supplier</label>
-									<select name="id_supplier" class="form-control input-sm">
-									<?php foreach ($this->ADM->grid_all_supplier('', 'id_supplier', 'DESC', 100, '', '' , '') as $supplier){ ?>
-										<option value="<?php echo $supplier->id_supplier ?>"><?php echo $supplier->nama_supplier ?></option>
-									<?php } ?>
-									</select>
-								</div>
-									<label class="control-label" for="inputText">Goods</label>
-									<select name="id_barang" class="form-control input-sm">
-												<?php foreach ($this->ADM->grid_all_barang('', 'id_barang', 'DESC', 100, '', '' , '') as $barang){ ?>
-													<option value="<?php echo $barang->id_barang ?>"><?php echo $barang->nama_barang ?></option>
-												<?php } ?>
-												</select>
-								</div>
-								<div class="form-group form-material">
-									<label class="control-label" for="inputText">Total</label>
-									<input type="number" class="form-control input-sm" id="jumlah" name="jumlah" placeholder="Total" required/>
-								</div>
-								<div class='button center'>
-									<input class="btn btn-success btn-sm" type="submit" name="simpan" value="Add Data" id="validateButton2">
-									<input class="btn btn-danger btn-sm" type="reset" name="batal" value="Cancel" onclick="location.href='<?php echo site_url(); ?>website/masuk'"
-									/>
-								</div>
-							</form>
+					<div class="col-md-12">
+						<div class="panel rounded-0">
+							<div class="panel-heading">
+								<h5 class="panel-title">Add <?php echo $breadcrumb; ?></h5>
+							</div>
+							<div class="panel-body container-fluid">
+								<form action="<?php echo site_url();?>website/masuk/tambah" method="post" id="exampleStandardForm" autocomplete="off">
+									<div class="form-group form-material">
+										<label class="control-label" for="inputText">Supplier</label>
+										<select name="id_supplier" class="form-control input-sm">
+											<?php foreach ($this->ADM->grid_all_supplier('', 'id_supplier', 'DESC', 100, '', '' , '') as $supplier){ ?>
+												<option value="<?php echo $supplier->id_supplier ?>"><?php echo $supplier->nama_supplier ?></option>
+											<?php } ?>
+										</select>
+									</div>
+									<div class="form-group form-material">
+										<label class="control-label" for="inputText">Goods</label>
+										<select name="id_barang" class="form-control input-sm">
+											<?php foreach ($this->ADM->grid_all_barang('', 'id_barang', 'DESC', 100, '', '' , '') as $barang){ ?>
+												<option value="<?php echo $barang->id_barang ?>"><?php echo $barang->nama_barang ?></option>
+											<?php } ?>
+										</select>
+									</div>
+									<div class="form-group form-material">
+										<label class="control-label" for="inputText">Bank</label>
+										<input type="text" class="form-control input-sm" id="bank" name="bank" placeholder="Bank Name" required/>
+									</div>
+									<div class="form-group form-material">
+										<label class="control-label" for="inputText">Description</label>
+										<input class="form-control input-sm" id="description" name="description" placeholder="Description"required/>
+									</div>
+									<div class="form-group form-material">
+										<label class="control-label" for="inputText">Total</label>
+										<input type="number" class="form-control input-sm" id="jumlah" name="jumlah" placeholder="Total" required/>
+									</div>
+									<div class='button center'>
+										<input class="btn btn-success btn-sm" type="submit" name="simpan" value="Add Data" id="validateButton2">
+										<input class="btn btn-danger btn-sm" type="reset" name="batal" value="Cancel" onclick="location.href='<?php echo site_url(); ?>website/masuk'" />
+									</div>
+								</form>
+							</div>
 						</div>
 					</div>
 				</div>
 			</div>
-		</div>
+
 		<a href="<?php echo site_url();?>website/masuk">
 			<button class="site-action btn-raised btn btn-sm btn-floating blue" type="button">
 				<i class="icon wb-eye" aria-hidden="true"></i>
